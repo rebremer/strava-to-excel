@@ -29,15 +29,16 @@ def main():
                 else:
                     data_csv += " " + str(separator)
             data_csv = data_csv[:-1]
-        print("page %s retrieved and processed" % (page))
+        print("Activities of page %s processed" % (page))
         
         # Increment page number to retrieve next batch of activities
         page +=1
     
     # Finally, write csv file to your local disk
+    print("Start writing data to stava_activities_csv.csv")
     with open("stava_activities_csv.csv", "w") as outfile:
         outfile.write(data_csv)
-
+    print("Finished writing data to stava_activities_csv.csv")
 
 def get_strava_activities(page, token):
     # Retrieve activities from Strava using REST, 100 activities per call
@@ -54,9 +55,9 @@ def get_strava_activities(page, token):
     # Check if no empty array is returned
     if response.json() == []:
         if page == 1:
-            print("No data to be retrieved")
+            print("No activities to be retrieved")
         else:
-            print("All data retrieved")          
+            print("All activities retrieved")          
         return None
 
     # Return array
