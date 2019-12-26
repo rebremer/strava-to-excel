@@ -41,6 +41,7 @@ def main():
             outfile.write(data_csv)
         print("Finished writing data to stava_activities_csv.csv")
 
+
 def get_strava_activities(page, token):
     # Retrieve activities from Strava using REST, 100 activities per call
     response = requests.get(
