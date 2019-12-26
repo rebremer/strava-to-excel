@@ -18,7 +18,7 @@ The following steps need to be executed:
 
 The following steps need to be executed:
 - Clone or download this repository, fill in the bearer token in strava_activities_csv.py
-- Install [Python](https://www.python.org/downloads/). Open a terminal session and check that Python is correclty install by running `python --version` 
+- Install [Python](https://www.python.org/downloads/). Open a terminal session and check that Python is correctly install by running `python --version` 
 - Finally, run `python strava_activities_csv.py` that will downloads all your activities to a new csv file strava_activities_csv.csv that can be opened in Excel (see screenshot below)
 
 ![Strava activities in Excel](https://github.com/rebremer/strava-to-excel/blob/master/images/strava_activities_excel.png "Strava activities in Excel")
