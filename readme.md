@@ -7,7 +7,7 @@
 3. Fill in the client_id and client_secret of the app you just created. Make sure that "activity:read_all" is checked and then authorize. Then a popup windows appears that shall be accepted.
 4. Go to /athlete/activities in the playground environment, click "Try it out" and then Execute. Copy bearer token from the playground environment (see screenshot below).
 5. Clone or download this repository, fill in the bearer token in strava_activities_csv.py
-6. Install [python](https://www.python.org/downloads/), open python command line and then run `python strava_activities_csv.py`. A strava_activities_csv.csv file will be created with your data that can be opened in Excel
+6. Install [python](https://www.python.org/downloads/), open python command line and then run `python strava_activities_csv.py`. A strava_activities_csv.csv file will be created with your data that can be opened in Excel (see 2nd screenshot below)
 
 ### Playground with bearer token is depicted below: ###
 
