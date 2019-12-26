@@ -9,10 +9,10 @@
 5. Clone this repository, fill in the bearer token in strava_activities_csv.py
 6. Install [python](https://www.python.org/downloads/), open python command line and then run `python strava_activities_csv.py`. A strava_activities_csv.csv file will be created with your data that can be opened in Excel
 
-Playground with bearer token is depicted below.
+#### Playground with bearer token is depicted below: ####
 
 ![Bearer token](https://github.com/rebremer/strava-to-excel/blob/master/images/strava_bearer_token.png "Bearer Token")
 
-End result in which Strava data can be viewed in Excel
+#### End result in which Strava data can be viewed in Excel: ####
 
 ![Strava activities in Excel](https://github.com/rebremer/strava-to-excel/blob/master/images/strava_activities_excel.png "Strava activities in Excel")
