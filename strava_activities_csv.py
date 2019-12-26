@@ -11,8 +11,8 @@ def main():
     columns = ["name","distance","moving_time","elapsed_time","total_elevation_gain","type","workout_type","start_date_local","visibility","average_speed","max_speed","average_heartrate","max_heartrate"]
     
     # Create header as first row of csv
-    separator = '|'
-    data_csv = separator.join(columns)
+    delimiter = ','
+    data_csv = delimiter.join(columns)
     page=1
     while True:
         # Retrieve array with next 100 activities from Strava. Break loop when no activities are returned
@@ -25,9 +25,9 @@ def main():
             data_csv += "\n"
             for column in columns:
                 if column in activity:
-                    data_csv += str(activity[column]).replace(separator, ' ') + str(separator)
+                    data_csv += str(activity[column]).replace(delimiter, ' ') + str(delimiter)
                 else:
-                    data_csv += " " + str(separator)
+                    data_csv += " " + str(delimiter)
             data_csv = data_csv[:-1]
         print("Activities of page %s processed" % (page))
         
