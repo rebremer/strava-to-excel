@@ -6,7 +6,7 @@ def main():
     # See steps in readme.md for the steps to get a bearer token
     token = "<<Your bearer token>>"
     
-    # Selected fields in Strava activitiy to be put as column in csv. 
+    # Selected fields in Strava activitiy to be put as column in csv
     # More fields can be added, for field names refer to https://developers.strava.com/docs/reference/#api-Activities-getLoggedInAthleteActivities
     columns = ["name","distance","moving_time","elapsed_time","total_elevation_gain","type","workout_type","start_date_local","visibility","average_speed","max_speed","average_heartrate","max_heartrate"]
     
