@@ -3,7 +3,7 @@ import json
 
 
 def main():
-    # See steps in readme.md for the steps to get a bearer token
+    # See readme.md how to get a bearer token
     token = "<<Your bearer token>>"
     
     # Selected fields in Strava activitiy to be put as column in csv
