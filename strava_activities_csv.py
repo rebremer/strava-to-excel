@@ -6,20 +6,21 @@ def main():
     # See steps in readme.md for the steps to get a bearer token
     token = "<<Your bearer token>>"
     
-    # selected columns, more columns can be added when required
+    # Selected fields in Strava activitiy to be put as column in csv. 
+    # More fields can be added, for field names refer to https://developers.strava.com/docs/reference/#api-Activities-getLoggedInAthleteActivities
     columns = ["name","distance","moving_time","elapsed_time","total_elevation_gain","type","workout_type","start_date_local","visibility","average_speed","max_speed","average_heartrate","max_heartrate"]
     
-    # create header as first row of csv
+    # Create header as first row of csv
     separator = '|'
     data_csv = separator.join(columns)
     page=1
     while True:
-        # retrieve array with next 100 activities from Strava. Break loop when no activities are returned
+        # Retrieve array with next 100 activities from Strava. Break loop when no activities are returned
         activities = get_strava_activities(page, token)
         if activities == None:
             break
         
-        # get all data from single activity and create csv record
+        # Get all data from single activity and create csv record
         for activity in activities:
             data_csv += "\n"
             for column in columns:
@@ -30,7 +31,7 @@ def main():
             data_csv = data_csv[:-1]
         print("page %s retrieved and processed" % (page))
         
-        # increment page number to retrieve next batch of activities
+        # Increment page number to retrieve next batch of activities
         page +=1
     
     # Finally, write csv file to your local disk
