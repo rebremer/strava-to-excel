@@ -1,6 +1,6 @@
 ## Python script to download all your Strava activities to a local csv file ##
 
-The following prerequisites are needed
+The following prerequisites are required:
 1. Bearer token to retrieve your data from Strava
 2. Python 3.x to run script that creates csv file
 
