@@ -11,7 +11,7 @@ def main():
     columns = ["name","distance","moving_time","elapsed_time","total_elevation_gain","type","workout_type","start_date_local","visibility","average_speed","max_speed","average_heartrate","max_heartrate"]
     
     # Create header as first row of csv
-    delimiter = ','
+    delimiter = ',' # | or ; can be used as delimiter as well
     data_csv = delimiter.join(columns)
     page=1
     while True:
