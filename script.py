@@ -15,7 +15,7 @@ def strava_activities_to_csv():
 
     page=1
     while True:
-        # get activity from response
+        # retrieve array with next 100 activities from Strava
         stravaActivities = get_strava_activities(page, token)
         if stravaActivities == None:
             break
