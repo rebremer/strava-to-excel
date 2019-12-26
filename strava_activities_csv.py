@@ -35,10 +35,11 @@ def main():
         page +=1
     
     # Finally, write csv file to your local disk
-    print("Start writing data to stava_activities_csv.csv")
-    with open("stava_activities_csv.csv", "w") as outfile:
-        outfile.write(data_csv)
-    print("Finished writing data to stava_activities_csv.csv")
+    if page > 1:
+        print("Start writing data to stava_activities_csv.csv")
+        with open("stava_activities_csv.csv", "w") as outfile:
+            outfile.write(data_csv)
+        print("Finished writing data to stava_activities_csv.csv")
 
 def get_strava_activities(page, token):
     # Retrieve activities from Strava using REST, 100 activities per call
