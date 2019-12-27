@@ -14,7 +14,7 @@ def main():
     delimiter = ',' # | or ; can be used as delimiter as well
     data_csv = delimiter.join(columns)
 
-    # Process activities from Strava in batches (Strava limits number of activities to be downloaded at once)
+    # Process activities from Strava in batches (Strava limits number of activities to be retrieved in a single request)
     batch=1
     while True:
         # Retrieve batch with 100 activities from Strava. Break loop when no activities are returned
