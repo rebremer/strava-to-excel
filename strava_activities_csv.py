@@ -13,14 +13,14 @@ def main():
     # Create header as first row of csv
     delimiter = ',' # | or ; can be used as delimiter as well
     data_csv = delimiter.join(columns)
-    page=1
+    batch=1
     while True:
-        # Retrieve page with 100 activities from Strava. Break loop when no activities are returned
-        activities = get_strava_activities(page, token)
+        # Retrieve batch with 100 activities from Strava. Break loop when no activities are returned
+        activities = get_strava_activities(batch, token)
         if activities == None:
             break
         
-        # Get all data from single activity and create csv record. Repeat this for all 100 activities in page
+        # Get all data from single activity and create csv record. Repeat this for all 100 activities in batch
         for activity in activities:
             data_csv += "\n"
             for column in columns:
@@ -29,23 +29,23 @@ def main():
                 else:
                     data_csv += " " + str(delimiter)
             data_csv = data_csv[:-1]
-        print("Activities of page %s processed" % (page))
+        print("Activities of batch %s processed" % (batch))
         
-        # Increment page number to retrieve next page of 100 activities
-        page +=1
+        # Increment batch number to retrieve next batch of 100 activities
+        batch +=1
     
     # Finally, write csv file to your local disk
-    if page > 1:
+    if batch > 1:
         print("Start writing data to stava_activities_csv.csv")
         with open("stava_activities_csv.csv", "w") as outfile:
             outfile.write(data_csv)
         print("Finished writing data to stava_activities_csv.csv")
 
 
-def get_strava_activities(page, token):
+def get_strava_activities(batch, token):
     # Retrieve activities from Strava using REST, 100 activities per call
     response = requests.get(
-            'https://www.strava.com/api/v3/athlete/activities?page=%s&per_page=%s' % (page, 100),
+            'https://www.strava.com/api/v3/athlete/activities?page=%s&per_page=%s' % (batch, 100),
             headers={'Authorization': "Bearer " + token}
     )
 
@@ -56,7 +56,7 @@ def get_strava_activities(page, token):
 
     # Check if no empty array is returned
     if response.json() == []:
-        if page == 1:
+        if batch == 1:
             print("No activities to be retrieved")
         else:
             print("All activities retrieved")          
