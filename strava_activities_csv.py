@@ -15,12 +15,12 @@ def main():
     data_csv = delimiter.join(columns)
     page=1
     while True:
-        # Retrieve array with next 100 activities from Strava. Break loop when no activities are returned
+        # Retrieve batch with 100 activities from Strava. Break loop when no activities are returned
         activities = get_strava_activities(page, token)
         if activities == None:
             break
         
-        # Get all data from single activity and create csv record
+        # Get all data from single activity and create csv record. Repeat this for all 100 activities in batch
         for activity in activities:
             data_csv += "\n"
             for column in columns:
@@ -31,7 +31,7 @@ def main():
             data_csv = data_csv[:-1]
         print("Activities of page %s processed" % (page))
         
-        # Increment page number to retrieve next batch of activities
+        # Increment page number to retrieve next batch of 100 activities
         page +=1
     
     # Finally, write csv file to your local disk
