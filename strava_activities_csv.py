@@ -22,7 +22,7 @@ def main():
         if activities == None:
             break
         
-        # Get all data from single activity and create csv record. Repeat this for all 100 activities in batch
+        # Get all data from single activity and append csv record to data_csv. Repeat this for all 100 activities in batch
         for activity in activities:
             data_csv += "\n"
             for column in columns:
@@ -36,7 +36,7 @@ def main():
         # Increment batch number to retrieve next batch of 100 activities
         batch +=1
     
-    # Finally, write csv file to your local disk
+    # Finally, write data_csv as file to your local disk
     if batch > 1:
         print("Start writing data to stava_activities_csv.csv")
         with open("stava_activities_csv.csv", "w") as outfile:
